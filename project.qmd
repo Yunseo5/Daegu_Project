@@ -1,0 +1,23 @@
+--- 
+title: "대구광역시 공공데이터 활용 분석 프로젝트 "
+author: "8조"
+format: dashboard
+--- 
+
+```{python}
+import pandas as pd
+import plotly.express as px
+
+url = "./대구광역시 달서구_CCTV 설치 위치_20250527.csv"
+df = pd.read_csv(url, encoding='cp949')
+fig = px.scatter_mapbox(
+    df,
+    lat='위도',lon='경도',size='카메라대수',
+    hover_name='소재지지번주소',zoom=11,height=600,size_max= 10
+)
+fig.update_layout(
+    mapbox_style="carto-positron",
+    margin={"r":0,"t":0,"l":0,"b":0}
+)
+```
+
