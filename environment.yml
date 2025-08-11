@@ -1,0 +1,9 @@
+name: Degu_Project
+channels:
+  - defaults
+dependencies:
+  - python=3.11.13
+  - numpy
+  - pandas
+  - matplotlib
+  - plotly
