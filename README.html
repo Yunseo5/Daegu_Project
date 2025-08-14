@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>readme</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="README_files/libs/clipboard/clipboard.min.js"></script>
+<script src="README_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="README_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="README_files/libs/quarto-html/popper.min.js"></script>
+<script src="README_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="README_files/libs/quarto-html/anchor.min.js"></script>
+<link href="README_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="README_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="README_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="README_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="README_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+
+<section id="대구광역시의-취약장소-식별-및-안전도-향상" class="level1">
+<h1>대구광역시의 취약장소 식별 및 안전도 향상</h1>
+<p><strong>대구광역시 공공데이터 활용 분석 프로젝트</strong></p>
+<section id="분석-주제" class="level2">
+<h2 class="anchored" data-anchor-id="분석-주제">1. 분석 주제</h2>
+<p><strong>- 대구광역시의 취약장소 식별을 통한 안전도 향상</strong></p>
+</section>
+<section id="분석-배경" class="level2">
+<h2 class="anchored" data-anchor-id="분석-배경">1-1. 분석 배경</h2>
+<ul>
+<li>대구시의 범죄율이 꾸준히 증가하고 있으며, 특히 2025년부터 검거율도 감소하고 있어서 이를 해결할 방안의 필요성을 느낌</li>
+</ul>
+<p><strong>&lt;분석내용&gt;</strong> * 다양한 변수를 활용하여 <strong>범죄 발생이 집중되는 위험지역</strong>을 식별 후, 이를 바탕으로 안전도 향상 방안 도출</p>
+</section>
+<section id="데이터-설명" class="level2">
+<h2 class="anchored" data-anchor-id="데이터-설명">2. 데이터 설명</h2>
+<section id="대구광역시-cctv-정보" class="level3">
+<h3 class="anchored" data-anchor-id="대구광역시-cctv-정보">2-1. 대구광역시 CCTV 정보</h3>
+<ul>
+<li><strong>출처:</strong> local data</li>
+<li><strong>데이터 내용:</strong> 대구광역시 CCTV 설치 현황</li>
+<li><strong>주요 컬럼:</strong></li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 23%">
+<col style="width: 46%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>컬럼명</th>
+<th>설명</th>
+<th>데이터 타입</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>위도</td>
+<td>CCTV 설치 위치 위도 좌표</td>
+<td>Float</td>
+</tr>
+<tr class="even">
+<td>경도</td>
+<td>CCTV 설치 위치 경도 좌표</td>
+<td>Float</td>
+</tr>
+<tr class="odd">
+<td>설치목적구분</td>
+<td>CCTV 설치 목적(차량방범, 재난재해, 교통단속 제외)</td>
+<td>Float</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="대구광역시-안전비상벨-위치정보" class="level3">
+<h3 class="anchored" data-anchor-id="대구광역시-안전비상벨-위치정보">2-2. 대구광역시 안전비상벨 위치정보</h3>
+<ul>
+<li><strong>출처:</strong> local data</li>
+<li><strong>데이터 내용:</strong> 대구광역시 안전비상벨 설치 현황</li>
+<li><strong>주요 컬럼:</strong></li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>컬럼명</th>
+<th>설명</th>
+<th>데이터 타입</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>위도</td>
+<td>안전비상벨 설치 위치 위도 좌표</td>
+<td>Float</td>
+</tr>
+<tr class="even">
+<td>경도</td>
+<td>안전비상벨 설치 위치 경도 좌표</td>
+<td>Float</td>
+</tr>
+<tr class="odd">
+<td>설치목적구분</td>
+<td>안전비상벨 설치 목적 구분</td>
+<td>Float</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="대구광역시-유흥주점-현황" class="level3">
+<h3 class="anchored" data-anchor-id="대구광역시-유흥주점-현황">2-3. 대구광역시 유흥주점 현황</h3>
+<ul>
+<li><strong>출처:</strong> 공공데이터포털</li>
+<li><strong>데이터 내용:</strong> 대구광역시 유흥주점 현황</li>
+<li><strong>주요 컬럼:</strong></li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>컬럼명</th>
+<th>설명</th>
+<th>데이터 타입</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>업소명</td>
+<td>유흥주점 업소명</td>
+<td>Float</td>
+</tr>
+<tr class="even">
+<td>업소주소</td>
+<td>유흥주점 주소 정보</td>
+<td>Float</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="대구광역시-가로등-현황" class="level3">
+<h3 class="anchored" data-anchor-id="대구광역시-가로등-현황">2-4. 대구광역시 가로등 현황</h3>
+<ul>
+<li><strong>출처:</strong> 공공데이터포털</li>
+<li><strong>데이터 내용:</strong> 대구광역시 가로등 설치 현황</li>
+<li><strong>주요 컬럼:</strong></li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>컬럼명</th>
+<th>설명</th>
+<th>데이터 타입</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>위도</td>
+<td>가로등 설치 위치 위도 좌표</td>
+<td>Float</td>
+</tr>
+<tr class="even">
+<td>경도</td>
+<td>가로등 설치 위치 경도 좌표</td>
+<td>Float</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="대구광역시-보안등-현황" class="level3">
+<h3 class="anchored" data-anchor-id="대구광역시-보안등-현황">2-5. 대구광역시 보안등 현황</h3>
+<ul>
+<li><strong>출처:</strong> 공공데이터포털</li>
+<li><strong>데이터 내용:</strong> 대구광역시 보안등 설치 현황</li>
+<li><strong>주요 컬럼:</strong></li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>컬럼명</th>
+<th>설명</th>
+<th>데이터 타입</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>위도</td>
+<td>보안등 설치 위치 위도 좌표</td>
+<td>Float</td>
+</tr>
+<tr class="even">
+<td>경도</td>
+<td>보안등 설치 위치 경도 좌표</td>
+<td>Float</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="대구광역시-상가정보" class="level3">
+<h3 class="anchored" data-anchor-id="대구광역시-상가정보">2-6. 대구광역시 상가정보</h3>
+<ul>
+<li><strong>출처:</strong> 공공데이터포털</li>
+<li><strong>데이터 내용:</strong> 대구광역시 상가정보</li>
+<li><strong>주요 컬럼:</strong></li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>컬럼명</th>
+<th>설명</th>
+<th>데이터 타입</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>상권업종소분류명</td>
+<td>입시.교과학원, 요리주점, 일반 유흥 주점</td>
+<td>Float</td>
+</tr>
+<tr class="even">
+<td>위도</td>
+<td>상가 위치 위도 좌표</td>
+<td>Float</td>
+</tr>
+<tr class="odd">
+<td>경도</td>
+<td>상가 위치 경도 좌표</td>
+<td>Float</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="대구광역시-관서별-경찰서-위치" class="level3">
+<h3 class="anchored" data-anchor-id="대구광역시-관서별-경찰서-위치">2-7. 대구광역시 관서별 경찰서 위치</h3>
+<ul>
+<li><strong>출처:</strong> 공공데이터포털</li>
+<li><strong>데이터 내용:</strong> 대구광역시 경찰서(경찰서,파출소,지구대) 현황</li>
+<li><strong>주요 컬럼:</strong></li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>컬럼명</th>
+<th>설명</th>
+<th>데이터 타입</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>경찰서명</td>
+<td>경찰서명 정보</td>
+<td>Float</td>
+</tr>
+<tr class="even">
+<td>주소</td>
+<td>경찰서 주소 정보</td>
+<td>Float</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="대구광역시-치안센터-위치" class="level3">
+<h3 class="anchored" data-anchor-id="대구광역시-치안센터-위치">2-8. 대구광역시 치안센터 위치</h3>
+<ul>
+<li><strong>출처:</strong> 공공데이터포털</li>
+<li><strong>데이터 내용:</strong> 대구광역시 치안센터 현황</li>
+<li><strong>주요 컬럼:</strong></li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>컬럼명</th>
+<th>설명</th>
+<th>데이터 타입</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>치안센터명</td>
+<td>치안센터명 정보</td>
+<td>Float</td>
+</tr>
+<tr class="even">
+<td>주소</td>
+<td>치안센터 주소 정보</td>
+<td>Float</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="대구광역시-학교-위치" class="level3">
+<h3 class="anchored" data-anchor-id="대구광역시-학교-위치">2-9. 대구광역시 학교 위치</h3>
+<ul>
+<li><strong>출처:</strong> 공공데이터포털</li>
+<li><strong>데이터 내용:</strong> 대구광역시 초.중.고등학교 위치</li>
+<li><strong>주요 컬럼:</strong></li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>컬럼명</th>
+<th>설명</th>
+<th>데이터 타입</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>이름</td>
+<td>초.중.고등학교명 정보</td>
+<td>Float</td>
+</tr>
+<tr class="even">
+<td>위도</td>
+<td>초.중.고등학교 위치 위도 좌표</td>
+<td>Float</td>
+</tr>
+<tr class="odd">
+<td>경도</td>
+<td>초.중.고등학교 위치 경도 좌표</td>
+<td>Float</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="대구광역시-대학교-위치" class="level3">
+<h3 class="anchored" data-anchor-id="대구광역시-대학교-위치">2-10. 대구광역시 대학교 위치</h3>
+<ul>
+<li><strong>출처:</strong> 공공데이터포털</li>
+<li><strong>데이터 내용:</strong> 대구광역시 대학교 현황</li>
+<li><strong>주요 컬럼:</strong></li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>컬럼명</th>
+<th>설명</th>
+<th>데이터 타입</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>이름</td>
+<td>대학교명 정보</td>
+<td>Float</td>
+</tr>
+<tr class="even">
+<td>위도</td>
+<td>대학교 위치 위도 좌표</td>
+<td>Float</td>
+</tr>
+<tr class="odd">
+<td>경도</td>
+<td>대학교 위치 경도 좌표</td>
+<td>Float</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="대구광역시-동.읍.면별-세대-및-인구" class="level3">
+<h3 class="anchored" data-anchor-id="대구광역시-동.읍.면별-세대-및-인구">2-11. 대구광역시 동.읍.면별 세대 및 인구</h3>
+<ul>
+<li><strong>출처:</strong> 공공데이터포털</li>
+<li><strong>데이터 내용:</strong> 대구광역시 동.읍.면별 세대 및 인구 정보</li>
+<li><strong>주요 컬럼:</strong></li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>컬럼명</th>
+<th>설명</th>
+<th>데이터 타입</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>세대수</td>
+<td>대구광역시 동.읍.면별 세대수</td>
+<td>Float</td>
+</tr>
+<tr class="even">
+<td>등록인구(남)</td>
+<td>대구광역시 동.읍.면별 등록인구(남)</td>
+<td>Float</td>
+</tr>
+<tr class="odd">
+<td>등록인구(여)</td>
+<td>대구광역시 동.읍.면별 등록인구(여)</td>
+<td>Float</td>
+</tr>
+<tr class="even">
+<td>한국인(남)</td>
+<td>대구광역시 동.읍.면별 한국인(남)</td>
+<td>Float</td>
+</tr>
+<tr class="odd">
+<td>한국인(여)</td>
+<td>대구광역시 동.읍.면별 한국인(여)</td>
+<td>Float</td>
+</tr>
+<tr class="even">
+<td>외국인(남)</td>
+<td>대구광역시 동.읍.면별 외국인(남)</td>
+<td>Float</td>
+</tr>
+<tr class="odd">
+<td>외국인(여)</td>
+<td>대구광역시 동.읍.면별 외국인(여)</td>
+<td>Float</td>
+</tr>
+<tr class="even">
+<td>세대당 인구</td>
+<td>대구광역시 동.읍.면별 세대당 인구수</td>
+<td>Float</td>
+</tr>
+<tr class="odd">
+<td>인구밀도</td>
+<td>대구광역시 동.읍.면별 인구밀도</td>
+<td>Float</td>
+</tr>
+<tr class="even">
+<td>면적(km^2)</td>
+<td>대구광역시 동.읍.면별 면적</td>
+<td>Float</td>
+</tr>
+<tr class="odd">
+<td>평균연령</td>
+<td>대구광역시 동.읍.면별 평균연령</td>
+<td>Float</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="전국-범죄-발생-지역별-통계-데이터-2023년" class="level3">
+<h3 class="anchored" data-anchor-id="전국-범죄-발생-지역별-통계-데이터-2023년">2-12. 전국 범죄 발생 지역별 통계 데이터 (2023년)</h3>
+<ul>
+<li><strong>출처:</strong> kosis</li>
+<li><strong>데이터 내용:</strong> 대구광역시 구별 범죄발생수</li>
+<li><strong>주요 컬럼:</strong> | 범죄별 | 강력범죄, 폭력범죄 발생수 정보 | Float |</li>
+</ul>
+</section>
+<section id="전국-범죄-발생-지역별-통계-데이터-2023년-1" class="level3">
+<h3 class="anchored" data-anchor-id="전국-범죄-발생-지역별-통계-데이터-2023년-1">2-13. 전국 범죄 발생 지역별 통계 데이터 (2023년)</h3>
+<ul>
+<li><strong>출처:</strong> kosis</li>
+<li><strong>데이터 내용:</strong> 범죄율 증감률</li>
+<li><strong>주요 컬럼:</strong></li>
+</ul>
+</section>
+</section>
+<section id="데이터-통합-및-전처리-과정" class="level2">
+<h2 class="anchored" data-anchor-id="데이터-통합-및-전처리-과정">3. 데이터 통합 및 전처리 과정</h2>
+<section id="전처리-단계별-과정" class="level3">
+<h3 class="anchored" data-anchor-id="전처리-단계별-과정">전처리 단계별 과정</h3>
+<section id="단계-위도경도-좌표로-변환" class="level4">
+<h4 class="anchored" data-anchor-id="단계-위도경도-좌표로-변환">1단계: 위도/경도 좌표로 변환</h4>
+<p><strong>목적:</strong> 주소 정보를 위도/경도 좌표로 변환</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tqdm <span class="im">import</span> tqdm</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 카카오 API를 사용한 주소 → 좌표 변환</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_coords_from_address(address, api_key):</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> <span class="bu">isinstance</span>(address, <span class="bu">str</span>) <span class="kw">or</span> <span class="kw">not</span> address.strip():</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span>, <span class="va">None</span>, <span class="st">"주소 없음"</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    cleaned_address <span class="op">=</span> re.sub(<span class="vs">r'</span><span class="dv">\s</span><span class="op">*</span><span class="ch">\(</span><span class="pp">[^)]</span><span class="op">*</span><span class="ch">\)</span><span class="vs">'</span>, <span class="st">''</span>, address).strip()</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    headers <span class="op">=</span> {<span class="st">'Authorization'</span>: <span class="ss">f'KakaoAK </span><span class="sc">{</span>api_key<span class="sc">}</span><span class="ss">'</span>}</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    params <span class="op">=</span> {<span class="st">'query'</span>: cleaned_address}</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>        response <span class="op">=</span> requests.get(API_URL, headers<span class="op">=</span>headers, params<span class="op">=</span>params)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> response.status_code <span class="op">==</span> <span class="dv">401</span>:</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">None</span>, <span class="va">None</span>, <span class="st">"API 키 인증 실패 (401)"</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>        response.raise_for_status()</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>        data <span class="op">=</span> response.json()</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> data[<span class="st">'documents'</span>]:</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>            lon <span class="op">=</span> data[<span class="st">'documents'</span>][<span class="dv">0</span>][<span class="st">'x'</span>]</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>            lat <span class="op">=</span> data[<span class="st">'documents'</span>][<span class="dv">0</span>][<span class="st">'y'</span>]</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> lat, lon, <span class="st">"성공"</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">None</span>, <span class="va">None</span>, <span class="st">"결과 없음"</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span>, <span class="va">None</span>, <span class="ss">f"오류: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="단계-행정동-정보-추가" class="level4">
+<h4 class="anchored" data-anchor-id="단계-행정동-정보-추가">2단계: 행정동 정보 추가</h4>
+<p><strong>목적:</strong> 위도/경도 좌표를 행정동 정보로 변환</p>
+</section>
+<section id="카카오-api-리버스-지오코딩" class="level4">
+<h4 class="anchored" data-anchor-id="카카오-api-리버스-지오코딩">2-1. 카카오 API 리버스 지오코딩</h4>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_dong_from_coords(latitude, longitude, api_key):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""좌표를 행정동으로 변환"""</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> pd.isna(latitude) <span class="kw">or</span> pd.isna(longitude):</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    headers <span class="op">=</span> {<span class="st">'Authorization'</span>: <span class="ss">f'KakaoAK </span><span class="sc">{</span>api_key<span class="sc">}</span><span class="ss">'</span>}</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    params <span class="op">=</span> {<span class="st">'x'</span>: longitude, <span class="st">'y'</span>: latitude}</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>        response <span class="op">=</span> requests.get(API_URL, headers<span class="op">=</span>headers, params<span class="op">=</span>params)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>        response.raise_for_status()</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        data <span class="op">=</span> response.json()</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> data[<span class="st">'documents'</span>]:</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>            address_info <span class="op">=</span> data[<span class="st">'documents'</span>][<span class="dv">0</span>][<span class="st">'address'</span>]</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>            <span class="co"># 행정동 우선, 없으면 법정동 사용</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>            dong_name <span class="op">=</span> address_info.get(<span class="st">'region_3depth_h_name'</span>) <span class="kw">or</span> <span class="op">\</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>                       address_info.get(<span class="st">'region_3depth_name'</span>)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> dong_name</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">None</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">Exception</span>:</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="vworld-api로-세부-행정동-보완" class="level4">
+<h4 class="anchored" data-anchor-id="vworld-api로-세부-행정동-보완">2-2. VWorld API로 세부 행정동 보완</h4>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_dong_from_vworld(latitude, longitude, api_key):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""VWorld API로 세부 행정동 정보 획득"""</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    params <span class="op">=</span> {</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">'service'</span>: <span class="st">'address'</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">'request'</span>: <span class="st">'getaddress'</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">'version'</span>: <span class="st">'2.0'</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">'crs'</span>: <span class="st">'epsg:4326'</span>,</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">'point'</span>: <span class="ss">f'</span><span class="sc">{</span>longitude<span class="sc">}</span><span class="ss">,</span><span class="sc">{</span>latitude<span class="sc">}</span><span class="ss">'</span>,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">'format'</span>: <span class="st">'json'</span>,</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">'type'</span>: <span class="st">'both'</span>,</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">'key'</span>: api_key</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>        response <span class="op">=</span> requests.get(API_URL, params<span class="op">=</span>params)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>        data <span class="op">=</span> response.json()</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> data[<span class="st">'response'</span>][<span class="st">'status'</span>] <span class="op">==</span> <span class="st">'OK'</span>:</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>            dong_name <span class="op">=</span> data[<span class="st">'response'</span>][<span class="st">'result'</span>][<span class="dv">0</span>][<span class="st">'structure'</span>][<span class="st">'level4A'</span>]</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> dong_name</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">None</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">Exception</span>:</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="단계-데이터-필터링-및-정제" class="level4">
+<h4 class="anchored" data-anchor-id="단계-데이터-필터링-및-정제">3단계: 데이터 필터링 및 정제</h4>
+<p><strong>목적:</strong> 분석에 불필요한 데이터 제거</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># CCTV 데이터에서 분석 대상 외 항목 제거</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>condition1 <span class="op">=</span> df[<span class="st">'구분'</span>] <span class="op">==</span> <span class="st">'CCTV'</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>purpose_to_remove <span class="op">=</span> [<span class="st">'차량방범'</span>, <span class="st">'재난재해'</span>, <span class="st">'교통단속'</span>]</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>condition2 <span class="op">=</span> df[<span class="st">'설치목적'</span>].isin(purpose_to_remove)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 조건에 해당하는 행 삭제</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>df_filtered <span class="op">=</span> df.drop(df[condition1 <span class="op">&amp;</span> condition2].index)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="단계-결측-행정동-예측" class="level4">
+<h4 class="anchored" data-anchor-id="단계-결측-행정동-예측">4단계: 결측 행정동 예측</h4>
+<p><strong>목적:</strong> 좌표는 있지만 행정동 정보가 없는 데이터 보완</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.neighbors <span class="im">import</span> KNeighborsClassifier</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 학습용 데이터와 예측용 데이터 분리</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>df_train <span class="op">=</span> df.dropna(subset<span class="op">=</span>[<span class="st">'행정동'</span>])</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>df_predict <span class="op">=</span> df[df[<span class="st">'행정동'</span>].isnull()]</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># KNN 모델로 행정동 예측</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>X_train <span class="op">=</span> df_train[[<span class="st">'위도'</span>, <span class="st">'경도'</span>]]</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>y_train <span class="op">=</span> df_train[<span class="st">'행정동'</span>]</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>knn <span class="op">=</span> KNeighborsClassifier(n_neighbors<span class="op">=</span><span class="dv">5</span>, n_jobs<span class="op">=-</span><span class="dv">1</span>)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>knn.fit(X_train, y_train)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 예측 실행</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>predicted_dongs <span class="op">=</span> knn.predict(df_predict[[<span class="st">'위도'</span>, <span class="st">'경도'</span>]])</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>df.loc[df[<span class="st">'행정동'</span>].isnull(), <span class="st">'행정동'</span>] <span class="op">=</span> predicted_dongs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="단계-행정동별-데이터-집계" class="level4">
+<h4 class="anchored" data-anchor-id="단계-행정동별-데이터-집계">5단계: 행정동별 데이터 집계</h4>
+<p><strong>목적:</strong> 각 시설을 행정동별로 집계하여 통합 데이터셋 구성</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 어린이용 CCTV 집계</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>kid_cctv <span class="op">=</span> safe.loc[(safe[<span class="st">'구분'</span>]<span class="op">==</span><span class="st">'CCTV'</span>)<span class="op">&amp;</span>(safe[<span class="st">'설치목적'</span>]<span class="op">==</span><span class="st">'어린이보호'</span>),:]</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>kid_cctv <span class="op">=</span> kid_cctv.groupby(<span class="st">'행정동'</span>)[<span class="st">'위도'</span>].count().reset_index()</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>main <span class="op">=</span> pd.merge(main, kid_cctv, on<span class="op">=</span><span class="st">'행정동'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 방범용 CCTV 집계</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>other_cctv <span class="op">=</span> safe.loc[(safe[<span class="st">'구분'</span>]<span class="op">==</span><span class="st">'CCTV'</span>)<span class="op">&amp;</span>(safe[<span class="st">'설치목적'</span>]<span class="op">!=</span><span class="st">'어린이보호'</span>),:]</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>other_cctv <span class="op">=</span> other_cctv.groupby(<span class="st">'행정동'</span>)[<span class="st">'경도'</span>].count().reset_index()</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>main <span class="op">=</span> pd.merge(main, other_cctv, on<span class="op">=</span><span class="st">'행정동'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 안전비상벨 집계</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>bell <span class="op">=</span> safe.loc[(safe[<span class="st">'구분'</span>]<span class="op">==</span><span class="st">'안전비상벨'</span>),:]</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>bell <span class="op">=</span> bell.groupby(<span class="st">'행정동'</span>)[<span class="st">'설치목적'</span>].count().reset_index()</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>main <span class="op">=</span> pd.merge(main, bell, on<span class="op">=</span><span class="st">'행정동'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="co"># 경찰서 관련 시설 집계</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>police <span class="op">=</span> danger.loc[(danger[<span class="st">'구분'</span>]<span class="op">==</span><span class="st">'경찰서'</span>)<span class="op">|</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>                    (danger[<span class="st">'구분'</span>]<span class="op">==</span><span class="st">'지구대'</span>)<span class="op">|</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>                    (danger[<span class="st">'구분'</span>]<span class="op">==</span><span class="st">'파출소'</span>)<span class="op">|</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>                    (danger[<span class="st">'구분'</span>]<span class="op">==</span><span class="st">'치안센터'</span>),:]</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>police <span class="op">=</span> police.groupby(<span class="st">'행정동'</span>)[<span class="st">'이름'</span>].count().reset_index()</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>main <span class="op">=</span> pd.merge(main, police, on<span class="op">=</span><span class="st">'행정동'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a><span class="co"># 유흥업소 집계</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>uheong <span class="op">=</span> danger.loc[(danger[<span class="st">'구분'</span>]<span class="op">==</span><span class="st">'유흥주점영업'</span>),:]</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>uheong <span class="op">=</span> uheong.groupby(<span class="st">'행정동'</span>)[<span class="st">'도로명'</span>].count().reset_index()</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>main <span class="op">=</span> pd.merge(main, uheong, on<span class="op">=</span><span class="st">'행정동'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a><span class="co"># 교육시설 집계</span></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>ele <span class="op">=</span> danger.loc[(danger[<span class="st">'구분'</span>]<span class="op">==</span><span class="st">'초등학교'</span>),:]</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>ele <span class="op">=</span> ele.groupby(<span class="st">'행정동'</span>)[<span class="st">'이름'</span>].count().reset_index()</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>main <span class="op">=</span> pd.merge(main, ele, on<span class="op">=</span><span class="st">'행정동'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>m_h <span class="op">=</span> danger.loc[(danger[<span class="st">'구분'</span>]<span class="op">==</span><span class="st">'중학교'</span>)<span class="op">|</span>(danger[<span class="st">'구분'</span>]<span class="op">==</span><span class="st">'고등학교'</span>),:]</span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>m_h <span class="op">=</span> m_h.groupby(<span class="st">'행정동'</span>)[<span class="st">'도로명'</span>].count().reset_index()</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>main <span class="op">=</span> pd.merge(main, m_h, on<span class="op">=</span><span class="st">'행정동'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>uni <span class="op">=</span> danger.loc[(danger[<span class="st">'구분'</span>]<span class="op">==</span><span class="st">'대학교'</span>),:]</span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>uni <span class="op">=</span> uni.groupby(<span class="st">'행정동'</span>)[<span class="st">'지번'</span>].count().reset_index()</span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>main <span class="op">=</span> pd.merge(main, uni, on<span class="op">=</span><span class="st">'행정동'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a><span class="co"># 상가 정보 집계</span></span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>com <span class="op">=</span> com.groupby(<span class="st">'행정동'</span>)[<span class="st">'경도'</span>].count().reset_index()</span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a>main <span class="op">=</span> pd.merge(main, com, on<span class="op">=</span><span class="st">'행정동'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a><span class="co"># 결측값 처리</span></span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>main <span class="op">=</span> main.fillna(<span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+</section>
+<section id="최종-통합-데이터-구조" class="level2">
+<h2 class="anchored" data-anchor-id="최종-통합-데이터-구조">4.최종 통합 데이터 구조</h2>
+<p><strong>총 141행 × 29개 컬럼</strong></p>
+</section>
+</section>
+<section id="sec-final-dataset" class="level1">
+<h1>최종 데이터셋 구성</h1>
+<section id="sec-demo-vars" class="level2">
+<h2 class="anchored" data-anchor-id="sec-demo-vars">인구통계 변수 (11개)</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>변수명</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>세대수 (세대)</td>
+<td>행정동별 총 세대수</td>
+</tr>
+<tr class="even">
+<td>등록인구 (명)</td>
+<td>총 등록인구 (남/여 구분)</td>
+</tr>
+<tr class="odd">
+<td>한국인 (명)</td>
+<td>한국인 인구 (남/여 구분)</td>
+</tr>
+<tr class="even">
+<td>외국인 (명)</td>
+<td>외국인 인구 (남/여 구분)</td>
+</tr>
+<tr class="odd">
+<td>세대당 인구 (명)</td>
+<td>평균 세대당 인구수</td>
+</tr>
+<tr class="even">
+<td>65세이상고령자 (명)</td>
+<td>고령자 인구</td>
+</tr>
+<tr class="odd">
+<td>평균연령 (세)</td>
+<td>행정동 평균연령</td>
+</tr>
+<tr class="even">
+<td>인구밀도 (명/km^2)</td>
+<td>단위면적당 인구밀도</td>
+</tr>
+<tr class="odd">
+<td>면적 (㎢)</td>
+<td>행정동 면적</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="sec-safety-vars" class="level2">
+<h2 class="anchored" data-anchor-id="sec-safety-vars">안전 인프라 변수 (6개)</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>변수명</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>경찰서 수</td>
+<td>경찰서, 파출소, 지구대, 치안센터 총계</td>
+</tr>
+<tr class="even">
+<td>가로등 수</td>
+<td>행정동 내 가로등 설치 개수</td>
+</tr>
+<tr class="odd">
+<td>보안등 수</td>
+<td>행정동 내 보안등 설치 개수</td>
+</tr>
+<tr class="even">
+<td>어린이용 CCTV 수</td>
+<td>어린이 보호구역 CCTV 개수</td>
+</tr>
+<tr class="odd">
+<td>방범용 CCTV수</td>
+<td>방범목적 CCTV 설치 개수</td>
+</tr>
+<tr class="even">
+<td>안전비상벨 수</td>
+<td>안전비상벨 설치 개수</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="sec-region-vars" class="level2">
+<h2 class="anchored" data-anchor-id="sec-region-vars">지역 특성 변수 (5개)</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>변수명</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>유흥업소 수</td>
+<td>행정동 내 유흥주점 개수</td>
+</tr>
+<tr class="even">
+<td>초등학교 수</td>
+<td>초등학교 개수</td>
+</tr>
+<tr class="odd">
+<td>중,고등학교 수</td>
+<td>중학교, 고등학교 개수</td>
+</tr>
+<tr class="even">
+<td>대학교 수</td>
+<td>대학교 개수</td>
+</tr>
+<tr class="odd">
+<td>상가 수</td>
+<td>상업시설 개수</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="종속-변수-1개" class="level2">
+<h2 class="anchored" data-anchor-id="종속-변수-1개">종속 변수 (1개)</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>변수명</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>범죄발생 수</td>
+<td>총 범죄수 * 총 인구수 / 구 인구수</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="향후-분석-계획" class="level1">
+<h1>향후 분석 계획</h1>
+<section id="위험도-모델링-계획" class="level2">
+<h2 class="anchored" data-anchor-id="위험도-모델링-계획">위험도 모델링 계획</h2>
+<section id="위험도-산출-공식" class="level3">
+<h3 class="anchored" data-anchor-id="위험도-산출-공식">위험도 산출 공식</h3>
+<p><strong>순위험도 = Σ(위험요소 × 가중치) - Σ(안전요소 × 가중치)</strong></p>
+</section>
+<section id="초기-변수-분류-및-가중치-설정" class="level3">
+<h3 class="anchored" data-anchor-id="초기-변수-분류-및-가중치-설정">초기 변수 분류 및 가중치 설정</h3>
+<p>문헌 및 통계 분석, 전문가 의견, 상관분석으로 설정하고, 이후 데이터를 기반으로 변수를 다시 재분류할 예정입니다.</p>
+<section id="sec-risk-factors-detail" class="level4">
+<h4 class="anchored" data-anchor-id="sec-risk-factors-detail">위험요소 (Risk Factors, + 가중치)</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 36%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>변수</th>
+<th>정의</th>
+<th>초기 가중치</th>
+<th>설정 근거</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>인구밀도</strong></td>
+<td>등록인구 ÷ 면적(㎢)</td>
+<td>0.25</td>
+<td>범죄 기회 증가와 강한 양의 상관관계 예상. 경찰청 통계에 따르면 인구밀도 상위 10% 지역은 범죄율 평균 1.6배 높음</td>
+</tr>
+<tr class="even">
+<td><strong>외국인 비율</strong></td>
+<td>외국인 수 ÷ 등록인구</td>
+<td>0.10</td>
+<td>언어·문화 장벽으로 지역 커뮤니케이션·방범 네트워크 약화 가능성. 법무부 범죄분석에서 외국인 밀집지 일부 범죄 유형이 높게 나타남</td>
+</tr>
+<tr class="odd">
+<td><strong>고령자 비율</strong></td>
+<td>65세 이상 인구 ÷ 등록인구</td>
+<td>0.15</td>
+<td>신체적 취약성과 응급 대응 지연으로 피해 확률 증가. 통계청 자료에서 고령화율 상위 지역은 절도·보이스피싱 피해율↑</td>
+</tr>
+<tr class="even">
+<td><strong>여성 비율</strong></td>
+<td>여성 인구 ÷ 등록인구</td>
+<td>0.10</td>
+<td>신체적 취약성으로 인한 범죄 피해 가능성 증가</td>
+</tr>
+<tr class="odd">
+<td><strong>평균연령</strong></td>
+<td>주민 평균 나이</td>
+<td>0.10</td>
+<td>지역 인구 구조 파악. 평균연령이 너무 높거나 낮으면 특정 범죄 유형 집중 가능</td>
+</tr>
+<tr class="even">
+<td><strong>세대당 인구수</strong></td>
+<td>등록인구 ÷ 세대수</td>
+<td>0.10</td>
+<td>1.0~1.2는 독거·소형가구 많음 → 방범 취약. 2.0 이상은 다가구 주택 가능성↑ → 밀도 상승</td>
+</tr>
+<tr class="odd">
+<td><strong>상가밀도</strong></td>
+<td>상가 수 ÷ 면적(㎢)</td>
+<td>0.15</td>
+<td>상권 활성은 유동인구↑, 기회범죄 발생↑. 서울시 자료에서 상가밀도 상위 25% 지역은 소매치기·절도율 약 1.4배</td>
+</tr>
+<tr class="even">
+<td><strong>상가비율</strong></td>
+<td>상가 수 ÷ 인구 × 1,000</td>
+<td>0.10</td>
+<td>인구 대비 상권 접근성. 낮은 인구에 상가 집중시 야간 취약성↑</td>
+</tr>
+<tr class="odd">
+<td><strong>유흥업소 밀도</strong></td>
+<td>유흥업소 수 ÷ 면적(㎢)</td>
+<td>0.15</td>
+<td>야간 폭력·성범죄와 통계적으로 유의한 양의 상관 발견 사례 다수</td>
+</tr>
+<tr class="even">
+<td><strong>중고등학교 밀도</strong></td>
+<td>(중+고) 수 ÷ 면적(㎢)</td>
+<td>0.10</td>
+<td>청소년 유동과 폭력 사건 가능성. 청소년 비중 높은 지역 범죄유형 변화 가능</td>
+</tr>
+<tr class="odd">
+<td><strong>대학교 밀도</strong></td>
+<td>대학교 수 ÷ 면적(㎢)</td>
+<td>0.10</td>
+<td>야간활동 증가, 음주 관련 사건 등 상권과 결합 위험</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="sec-protective-factors-detail" class="level4">
+<h4 class="anchored" data-anchor-id="sec-protective-factors-detail">안전요소 (Protective Factors, - 가중치)</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 36%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>변수</th>
+<th>정의</th>
+<th>초기 가중치</th>
+<th>설정 근거</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>경찰시설 밀도</strong></td>
+<td>경찰서·파출소·지구대 수 ÷ 면적</td>
+<td>-0.20</td>
+<td>치안 대응력↑, 범죄 억제 효과. 한국형 치안서비스 연구에서 경찰밀도 상위 지역의 범죄율 약 25%↓</td>
+</tr>
+<tr class="even">
+<td><strong>조명 밀도</strong></td>
+<td>(가로등+보안등) ÷ 면적</td>
+<td>-0.15</td>
+<td>야간 가시성↑, 범죄 기회 감소. 국토연구원 연구에서 조명 밀도와 야간범죄율은 역상관</td>
+</tr>
+<tr class="odd">
+<td><strong>CCTV 밀도</strong></td>
+<td>(어린이용+방범용 CCTV) ÷ 면적</td>
+<td>-0.20</td>
+<td>범죄 억제·증거 확보 효과. 설치 지역의 절도율 평균 27% 감소 보고</td>
+</tr>
+<tr class="even">
+<td><strong>비상벨 밀도</strong></td>
+<td>비상벨 수 ÷ 면적</td>
+<td>-0.10</td>
+<td>긴급 대응 가능성↑. 범죄 피해자 신고 반응속도 향상</td>
+</tr>
+<tr class="odd">
+<td><strong>초등학교 밀도</strong></td>
+<td>초등학교 수 ÷ 면적</td>
+<td>-0.10</td>
+<td>아동 보호구역 지정·단속 강화 → 안전요소</td>
+</tr>
+<tr class="even">
+<td><strong>아파트 비율</strong></td>
+<td>아파트 세대수 ÷ 전체 세대수</td>
+<td>-0.15</td>
+<td>경비·출입통제·공용 CCTV 등 방범 인프라 효과</td>
+</tr>
+</tbody>
+</table>
+<p><strong>위험요소 가중치 분포</strong>: - 높음(0.20~0.25): 인구밀도, 상가밀도, 유흥업소밀도 - 중간(0.10~0.15): 외국인비율, 고령자비율, 상가비율 - 낮음(0.10): 여성비율, 평균연령, 세대당인구수, 중고등학교밀도, 대학교밀도</p>
+<p><strong>안전요소 가중치 분포</strong>: - 높음(-0.20): 경찰시설밀도, CCTV밀도 - 중간(-0.15): 조명밀도, 아파트비율 - 낮음(-0.10): 비상벨밀도, 초등학교밀도</p>
+</section>
+</section>
+<section id="sec-model-validation-plan" class="level3">
+<h3 class="anchored" data-anchor-id="sec-model-validation-plan">모델 검증 계획</h3>
+<section id="단계-순위험도-계산" class="level4">
+<h4 class="anchored" data-anchor-id="단계-순위험도-계산">1단계: 순위험도 계산</h4>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 위험요소 점수 계산</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>risk_score <span class="op">=</span> (df[<span class="st">'인구밀도'</span>] <span class="op">*</span> <span class="fl">0.25</span> <span class="op">+</span> </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>              df[<span class="st">'외국인비율'</span>] <span class="op">*</span> <span class="fl">0.10</span> <span class="op">+</span> </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>              df[<span class="st">'고령자비율'</span>] <span class="op">*</span> <span class="fl">0.15</span> <span class="op">+</span> </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>              df[<span class="st">'여성비율'</span>] <span class="op">*</span> <span class="fl">0.10</span> <span class="op">+</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>              df[<span class="st">'평균연령'</span>] <span class="op">*</span> <span class="fl">0.10</span> <span class="op">+</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>              df[<span class="st">'세대당인구수'</span>] <span class="op">*</span> <span class="fl">0.10</span> <span class="op">+</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>              df[<span class="st">'상가밀도'</span>] <span class="op">*</span> <span class="fl">0.15</span> <span class="op">+</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>              df[<span class="st">'상가비율'</span>] <span class="op">*</span> <span class="fl">0.10</span> <span class="op">+</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>              df[<span class="st">'유흥업소밀도'</span>] <span class="op">*</span> <span class="fl">0.15</span> <span class="op">+</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>              df[<span class="st">'중고등학교밀도'</span>] <span class="op">*</span> <span class="fl">0.10</span> <span class="op">+</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>              df[<span class="st">'대학교밀도'</span>] <span class="op">*</span> <span class="fl">0.10</span>)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 안전요소 점수 계산</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>safety_score <span class="op">=</span> (df[<span class="st">'경찰시설밀도'</span>] <span class="op">*</span> <span class="fl">0.20</span> <span class="op">+</span> </span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>                df[<span class="st">'조명밀도'</span>] <span class="op">*</span> <span class="fl">0.15</span> <span class="op">+</span> </span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>                df[<span class="st">'CCTV밀도'</span>] <span class="op">*</span> <span class="fl">0.20</span> <span class="op">+</span> </span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>                df[<span class="st">'비상벨밀도'</span>] <span class="op">*</span> <span class="fl">0.10</span> <span class="op">+</span> </span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>                df[<span class="st">'초등학교밀도'</span>] <span class="op">*</span> <span class="fl">0.10</span> <span class="op">+</span> </span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>                df[<span class="st">'아파트비율'</span>] <span class="op">*</span> <span class="fl">0.15</span>)</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="co"># 순위험도 = 위험요소 - 안전요소</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'순위험도'</span>] <span class="op">=</span> risk_score <span class="op">-</span> safety_score</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="단계-모델-유효성-검증" class="level4">
+<h4 class="anchored" data-anchor-id="단계-모델-유효성-검증">2단계: 모델 유효성 검증</h4>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> spearmanr, pearsonr</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 순위험도와 실제 범죄발생률 간 상관관계 분석</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>corr_s, pval_s <span class="op">=</span> spearmanr(df[<span class="st">'순위험도'</span>], df[<span class="st">'범죄발생률'</span>])</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>corr_p, pval_p <span class="op">=</span> pearsonr(df[<span class="st">'순위험도'</span>], df[<span class="st">'범죄발생률'</span>])</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Spearman 상관계수: </span><span class="sc">{</span>corr_s<span class="sc">:.4f}</span><span class="ss"> (p-value: </span><span class="sc">{</span>pval_s<span class="sc">:.4f}</span><span class="ss">)"</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Pearson 상관계수: </span><span class="sc">{</span>corr_p<span class="sc">:.4f}</span><span class="ss"> (p-value: </span><span class="sc">{</span>pval_p<span class="sc">:.4f}</span><span class="ss">)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="단계-개별-변수-검증" class="level4">
+<h4 class="anchored" data-anchor-id="단계-개별-변수-검증">3단계: 개별 변수 검증</h4>
+<p>각 변수와 범죄발생률 간의 개별 상관관계를 분석하여 초기 가설을 검증합니다.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 개별 변수별 상관분석 결과 저장</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>correlation_results <span class="op">=</span> {}</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 위험요소 검증</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>risk_variables <span class="op">=</span> [<span class="st">'인구밀도'</span>, <span class="st">'외국인비율'</span>, <span class="st">'고령자비율'</span>, <span class="st">'여성비율'</span>, </span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>                  <span class="st">'평균연령'</span>, <span class="st">'세대당인구수'</span>, <span class="st">'상가밀도'</span>, <span class="st">'상가비율'</span>, </span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>                  <span class="st">'유흥업소밀도'</span>, <span class="st">'중고등학교밀도'</span>, <span class="st">'대학교밀도'</span>]</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 안전요소 검증</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>safety_variables <span class="op">=</span> [<span class="st">'경찰시설밀도'</span>, <span class="st">'조명밀도'</span>, <span class="st">'CCTV밀도'</span>, </span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>                    <span class="st">'비상벨밀도'</span>, <span class="st">'초등학교밀도'</span>, <span class="st">'아파트비율'</span>]</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> var <span class="kw">in</span> risk_variables <span class="op">+</span> safety_variables:</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    corr, pval <span class="op">=</span> spearmanr(df[var], df[<span class="st">'범죄발생률'</span>])</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    correlation_results[var] <span class="op">=</span> {<span class="st">'correlation'</span>: corr, <span class="st">'p_value'</span>: pval}</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>var<span class="sc">}</span><span class="ss">: r = </span><span class="sc">{</span>corr<span class="sc">:.4f}</span><span class="ss">, p = </span><span class="sc">{</span>pval<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="sec-visualization-plan-detail" class="level3">
+<h3 class="anchored" data-anchor-id="sec-visualization-plan-detail">시각화 계획</h3>
+<section id="범죄-현황-분석-시각화" class="level4">
+<h4 class="anchored" data-anchor-id="범죄-현황-분석-시각화">범죄 현황 분석 시각화</h4>
+<ol type="1">
+<li><strong>시간대별 범죄 분석</strong>: 야간 범죄 비율 및 시간대별 분포</li>
+<li><strong>장소별 범죄 분석</strong>: 범죄 발생 장소의 특성 분석<br>
+</li>
+<li><strong>공간적 분포</strong>: 대구시 행정동별 범죄 발생률 지도 시각화</li>
+</ol>
+</section>
+<section id="변수-간-관계-분석-시각화" class="level4">
+<h4 class="anchored" data-anchor-id="변수-간-관계-분석-시각화">변수 간 관계 분석 시각화</h4>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+다음 단계
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><strong>상관관계 분석</strong> 실시</li>
+<li>분석 결과를 바탕으로 <strong>변수 분류 및 가중치 재조정 예정</strong></li>
+</ol>
+</div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
