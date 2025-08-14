@@ -522,11 +522,11 @@ for var in risk_variables + safety_variables:
 #### 변수 간 관계 분석 시각화
 
 
-::: {.callout-note}
-## 다음 단계
+
+## 다음 계획
 
 1. **상관관계 분석** 실시
 2. 분석 결과를 바탕으로 **변수 분류 및 가중치 재조정 예정**
 
-:::
+
 
